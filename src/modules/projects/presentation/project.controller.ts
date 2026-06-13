@@ -1,0 +1,31 @@
+import type { Request, Response } from "express";
+import { StatusCodes } from "http-status-codes";
+import type { GetProjectsUseCase } from "../application/get-projects.usecase.ts";
+import type { CreateProjectUseCase } from "../application/create-project.usecase.ts";
+import type { UpdateProjectUseCase } from "../application/update-project.usecase.ts";
+
+export class ProjectController {
+  constructor(
+    private readonly getProjectsUseCase: GetProjectsUseCase,
+    private readonly createProjectUseCase: CreateProjectUseCase,
+    private readonly updateProjectUseCase: UpdateProjectUseCase,
+  ) {}
+
+  getAll = async (req: Request, res: Response): Promise<void> => {
+    const projects = await this.getProjectsUseCase.execute();
+    res.status(StatusCodes.OK).json({ data: projects });
+  };
+
+  create = async (req: Request, res: Response): Promise<void> => {
+    const project = await this.createProjectUseCase.execute(req.body);
+    res.status(StatusCodes.CREATED).json({ data: project });
+  };
+
+  update = async (req: Request, res: Response): Promise<void> => {
+    const project = await this.updateProjectUseCase.execute(
+      req.params.id,
+      req.body,
+    );
+    res.status(StatusCodes.OK).json({ data: project });
+  };
+}
