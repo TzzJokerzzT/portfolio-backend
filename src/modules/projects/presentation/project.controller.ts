@@ -23,7 +23,7 @@ export class ProjectController {
 
   update = async (req: Request, res: Response): Promise<void> => {
     const project = await this.updateProjectUseCase.execute(
-      req.params.id,
+      req.params.id as string,
       req.body,
     );
     res.status(StatusCodes.OK).json({ data: project });
