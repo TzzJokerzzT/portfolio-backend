@@ -24,6 +24,9 @@ app.use(
 
 			const allowed = env.CORS_ORIGIN.split(",").map((s) => s.trim());
 
+			// Universal wildcard: allow all origins
+			if (allowed.includes("*")) return callback(null, true);
+
 			// Exact match
 			if (allowed.includes(origin)) return callback(null, true);
 
