@@ -2,8 +2,9 @@ import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import { env } from "./config/env";
+import { connectDB } from "./config/database";
 import { ensureDB } from "./config/db-lazy";
+import { env } from "./config/env";
 import { aboutMeRouter } from "./modules/about-me/presentation/about-me.router";
 import { experienceRouter } from "./modules/experience/presentation/experience.router";
 import { introductionRouter } from "./modules/introduction/presentation/introduction.router";
@@ -73,4 +74,12 @@ app.use("/api/experience", experienceRouter);
 
 app.use(errorHandler);
 
-export { app };
+const start = async () => {
+	await connectDB();
+	app.listen(env.PORT, () => {
+		console.log(`🚀 Server running on http://localhost:${env.PORT}`);
+	});
+};
+start();
+
+export default app;
