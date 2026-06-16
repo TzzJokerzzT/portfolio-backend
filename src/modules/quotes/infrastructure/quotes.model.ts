@@ -1,5 +1,5 @@
 import mongoose, { type Model } from "mongoose";
-import type { IQuotesDocument } from "../domain/quote.entity.ts";
+import type { IQuotesDocument } from "../domain/quote.entity";
 
 const quoteSubSchema = new mongoose.Schema({
   id: { type: String, required: true },

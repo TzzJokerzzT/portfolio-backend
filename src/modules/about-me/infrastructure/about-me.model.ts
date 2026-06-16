@@ -1,5 +1,5 @@
 import mongoose, { type Model } from "mongoose";
-import type { IAboutMe } from "../domain/about-me.entity.ts";
+import type { IAboutMe } from "../domain/about-me.entity";
 
 const aboutItemSubSchema = new mongoose.Schema({
   id: { type: String, required: true },

@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import type { GetQuotesUseCase } from "../application/get-quotes.usecase.ts";
-import type { AddQuoteUseCase } from "../application/add-quote.usecase.ts";
-import type { ReplaceQuotesUseCase } from "../application/replace-quotes.usecase.ts";
+import type { GetQuotesUseCase } from "../application/get-quotes.usecase";
+import type { AddQuoteUseCase } from "../application/add-quote.usecase";
+import type { ReplaceQuotesUseCase } from "../application/replace-quotes.usecase";
 
 export class QuotesController {
   constructor(

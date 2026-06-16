@@ -1,5 +1,5 @@
-import type { AboutMeRepository } from "../infrastructure/about-me.repository.ts";
-import type { IAboutMe } from "../domain/about-me.entity.ts";
+import type { AboutMeRepository } from "../infrastructure/about-me.repository";
+import type { IAboutMe } from "../domain/about-me.entity";
 
 export class UpdateAboutMeUseCase {
   constructor(private readonly repo: AboutMeRepository) {}

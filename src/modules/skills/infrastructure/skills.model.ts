@@ -1,5 +1,5 @@
 import mongoose, { type Model } from "mongoose";
-import type { ISkillsDocument } from "../domain/skill.entity.ts";
+import type { ISkillsDocument } from "../domain/skill.entity";
 
 const skillSubSchema = new mongoose.Schema({
   id: { type: String, required: true },

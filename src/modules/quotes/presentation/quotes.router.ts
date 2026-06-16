@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { QuotesRepository } from "../infrastructure/quotes.repository.ts";
-import { GetQuotesUseCase } from "../application/get-quotes.usecase.ts";
-import { AddQuoteUseCase } from "../application/add-quote.usecase.ts";
-import { ReplaceQuotesUseCase } from "../application/replace-quotes.usecase.ts";
-import { QuotesController } from "../presentation/quotes.controller.ts";
-import { validate, asyncHandler } from "../../../shared/middleware/index.ts";
-import { AddQuoteSchema, ReplaceQuotesSchema } from "./quote.dto.ts";
+import { QuotesRepository } from "../infrastructure/quotes.repository";
+import { GetQuotesUseCase } from "../application/get-quotes.usecase";
+import { AddQuoteUseCase } from "../application/add-quote.usecase";
+import { ReplaceQuotesUseCase } from "../application/replace-quotes.usecase";
+import { QuotesController } from "../presentation/quotes.controller";
+import { validate, asyncHandler } from "../../../shared/middleware/index";
+import { AddQuoteSchema, ReplaceQuotesSchema } from "./quote.dto";
 
 const quotesRepo = new QuotesRepository();
 const getQuotesUseCase = new GetQuotesUseCase(quotesRepo);

@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { ExperienceRepository } from "../infrastructure/experience.repository.ts";
-import { GetExperiencesUseCase } from "../application/get-experiences.usecase.ts";
-import { AddExperienceUseCase } from "../application/add-experience.usecase.ts";
-import { ReplaceExperiencesUseCase } from "../application/replace-experiences.usecase.ts";
-import { ExperienceController } from "../presentation/experience.controller.ts";
-import { validate, asyncHandler } from "../../../shared/middleware/index.ts";
+import { ExperienceRepository } from "../infrastructure/experience.repository";
+import { GetExperiencesUseCase } from "../application/get-experiences.usecase";
+import { AddExperienceUseCase } from "../application/add-experience.usecase";
+import { ReplaceExperiencesUseCase } from "../application/replace-experiences.usecase";
+import { ExperienceController } from "../presentation/experience.controller";
+import { validate, asyncHandler } from "../../../shared/middleware/index";
 import {
   AddExperienceSchema,
   ReplaceExperiencesSchema,
-} from "./experience.dto.ts";
+} from "./experience.dto";
 
 const experienceRepo = new ExperienceRepository();
 const getExperiencesUseCase = new GetExperiencesUseCase(experienceRepo);

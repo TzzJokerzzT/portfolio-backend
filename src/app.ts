@@ -2,16 +2,16 @@ import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import { env } from "./config/env.ts";
-import { ensureDB } from "./config/db-lazy.ts";
-import { aboutMeRouter } from "./modules/about-me/presentation/about-me.router.ts";
-import { experienceRouter } from "./modules/experience/presentation/experience.router.ts";
-import { introductionRouter } from "./modules/introduction/presentation/introduction.router.ts";
-import { personalInformationRouter } from "./modules/personal-information/presentation/personal-information.router.ts";
-import { projectRouter } from "./modules/projects/presentation/project.router.ts";
-import { quotesRouter } from "./modules/quotes/presentation/quotes.router.ts";
-import { skillsRouter } from "./modules/skills/presentation/skills.router.ts";
-import { errorHandler } from "./shared/middleware/error-handler.ts";
+import { env } from "./config/env";
+import { ensureDB } from "./config/db-lazy";
+import { aboutMeRouter } from "./modules/about-me/presentation/about-me.router";
+import { experienceRouter } from "./modules/experience/presentation/experience.router";
+import { introductionRouter } from "./modules/introduction/presentation/introduction.router";
+import { personalInformationRouter } from "./modules/personal-information/presentation/personal-information.router";
+import { projectRouter } from "./modules/projects/presentation/project.router";
+import { quotesRouter } from "./modules/quotes/presentation/quotes.router";
+import { skillsRouter } from "./modules/skills/presentation/skills.router";
+import { errorHandler } from "./shared/middleware/error-handler";
 
 const app = express();
 

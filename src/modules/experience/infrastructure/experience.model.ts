@@ -2,7 +2,7 @@ import mongoose, { type Model } from "mongoose";
 import type {
   IExperience,
   IExperienceDocument,
-} from "../domain/experience.entity.ts";
+} from "../domain/experience.entity";
 
 const experienceSubSchema = new mongoose.Schema({
   id: { type: String, required: true },

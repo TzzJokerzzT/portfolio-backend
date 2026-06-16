@@ -1,5 +1,5 @@
-import type { ProjectRepository } from "../infrastructure/project.repository.ts";
-import type { IProject } from "../domain/project.entity.ts";
+import type { ProjectRepository } from "../infrastructure/project.repository";
+import type { IProject } from "../domain/project.entity";
 
 export class CreateProjectUseCase {
   constructor(private readonly repo: ProjectRepository) {}

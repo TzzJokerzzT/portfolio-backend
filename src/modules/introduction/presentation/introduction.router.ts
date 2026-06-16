@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { IntroductionRepository } from "../infrastructure/introduction.repository.ts";
-import { GetIntroductionUseCase } from "../application/get-introduction.usecase.ts";
-import { CreateIntroductionUseCase } from "../application/create-introduction.usecase.ts";
-import { UpdateIntroductionUseCase } from "../application/update-introduction.usecase.ts";
-import { IntroductionController } from "../presentation/introduction.controller.ts";
-import { validate, asyncHandler } from "../../../shared/middleware/index.ts";
+import { IntroductionRepository } from "../infrastructure/introduction.repository";
+import { GetIntroductionUseCase } from "../application/get-introduction.usecase";
+import { CreateIntroductionUseCase } from "../application/create-introduction.usecase";
+import { UpdateIntroductionUseCase } from "../application/update-introduction.usecase";
+import { IntroductionController } from "../presentation/introduction.controller";
+import { validate, asyncHandler } from "../../../shared/middleware/index";
 import {
   CreateIntroductionSchema,
   UpdateIntroductionSchema,
-} from "./introduction.dto.ts";
+} from "./introduction.dto";
 
 const introductionRepo = new IntroductionRepository();
 const getIntroductionUseCase = new GetIntroductionUseCase(introductionRepo);

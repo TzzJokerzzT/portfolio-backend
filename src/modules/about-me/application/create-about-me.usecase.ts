@@ -1,6 +1,6 @@
-import type { AboutMeRepository } from "../infrastructure/about-me.repository.ts";
-import type { IAboutMe } from "../domain/about-me.entity.ts";
-import { ConflictError } from "../../../shared/errors/index.ts";
+import type { AboutMeRepository } from "../infrastructure/about-me.repository";
+import type { IAboutMe } from "../domain/about-me.entity";
+import { ConflictError } from "../../../shared/errors/index";
 
 export class CreateAboutMeUseCase {
   constructor(private readonly repo: AboutMeRepository) {}

@@ -1,6 +1,6 @@
 import type { RequestHandler } from "express";
 import { z } from "zod";
-import { ValidationError } from "../errors/index.ts";
+import { ValidationError } from "../errors/index";
 
 export const validate = (schema: z.ZodType): RequestHandler => {
   return (req, _res, next) => {

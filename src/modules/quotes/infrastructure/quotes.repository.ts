@@ -1,6 +1,6 @@
 import crypto from "crypto";
-import type { IQuote, IQuotesDocument } from "../domain/quote.entity.ts";
-import { QuotesModel } from "./quotes.model.ts";
+import type { IQuote, IQuotesDocument } from "../domain/quote.entity";
+import { QuotesModel } from "./quotes.model";
 
 export class QuotesRepository {
   constructor(private readonly model = QuotesModel) {}

@@ -1,6 +1,6 @@
-import type { IProject } from "../domain/project.entity.ts";
-import { ProjectModel } from "./project.model.ts";
-import { NotFoundError } from "../../../shared/errors/index.ts";
+import type { IProject } from "../domain/project.entity";
+import { ProjectModel } from "./project.model";
+import { NotFoundError } from "../../../shared/errors/index";
 
 export class ProjectRepository {
   async findAll(): Promise<IProject[]> {

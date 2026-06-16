@@ -2,9 +2,9 @@ import crypto from "crypto";
 import type {
   IPersonalInformation,
   IContact,
-} from "../domain/personal-information.entity.ts";
-import { PersonalInformationModel } from "./personal-information.model.ts";
-import { NotFoundError } from "../../../shared/errors/index.ts";
+} from "../domain/personal-information.entity";
+import { PersonalInformationModel } from "./personal-information.model";
+import { NotFoundError } from "../../../shared/errors/index";
 
 export class PersonalInformationRepository {
   constructor(private readonly model = PersonalInformationModel) {}

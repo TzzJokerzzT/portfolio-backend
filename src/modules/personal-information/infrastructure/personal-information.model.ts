@@ -1,5 +1,5 @@
 import mongoose, { type Model } from "mongoose";
-import type { IPersonalInformation } from "../domain/personal-information.entity.ts";
+import type { IPersonalInformation } from "../domain/personal-information.entity";
 
 const contactSubSchema = new mongoose.Schema({
   id: { type: String, required: true },

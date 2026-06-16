@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import type { GetAboutMeUseCase } from "../application/get-about-me.usecase.ts";
-import type { CreateAboutMeUseCase } from "../application/create-about-me.usecase.ts";
-import type { UpdateAboutMeUseCase } from "../application/update-about-me.usecase.ts";
+import type { GetAboutMeUseCase } from "../application/get-about-me.usecase";
+import type { CreateAboutMeUseCase } from "../application/create-about-me.usecase";
+import type { UpdateAboutMeUseCase } from "../application/update-about-me.usecase";
 
 export class AboutMeController {
   constructor(

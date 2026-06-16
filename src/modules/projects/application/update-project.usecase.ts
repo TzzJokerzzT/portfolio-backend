@@ -1,6 +1,6 @@
-import type { ProjectRepository } from "../infrastructure/project.repository.ts";
-import type { IProject } from "../domain/project.entity.ts";
-import { NotFoundError } from "../../../shared/errors/index.ts";
+import type { ProjectRepository } from "../infrastructure/project.repository";
+import type { IProject } from "../domain/project.entity";
+import { NotFoundError } from "../../../shared/errors/index";
 
 export class UpdateProjectUseCase {
   constructor(private readonly repo: ProjectRepository) {}

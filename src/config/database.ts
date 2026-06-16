@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { env } from "./env.ts";
+import { env } from "./env";
 
 export const connectDB = async (): Promise<void> => {
   // Already connected or connecting — reuse the existing connection

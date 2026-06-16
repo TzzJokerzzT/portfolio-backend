@@ -2,8 +2,8 @@ import crypto from "crypto";
 import type {
   IExperience,
   IExperienceDocument,
-} from "../domain/experience.entity.ts";
-import { ExperienceModel } from "./experience.model.ts";
+} from "../domain/experience.entity";
+import { ExperienceModel } from "./experience.model";
 
 export class ExperienceRepository {
   constructor(private readonly model = ExperienceModel) {}

@@ -1,6 +1,6 @@
 import crypto from "crypto";
-import type { ISkill, ISkillsDocument } from "../domain/skill.entity.ts";
-import { SkillsModel } from "./skills.model.ts";
+import type { ISkill, ISkillsDocument } from "../domain/skill.entity";
+import { SkillsModel } from "./skills.model";
 
 export class SkillsRepository {
   constructor(private readonly model = SkillsModel) {}

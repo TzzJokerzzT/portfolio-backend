@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import type { GetProjectsUseCase } from "../application/get-projects.usecase.ts";
-import type { CreateProjectUseCase } from "../application/create-project.usecase.ts";
-import type { UpdateProjectUseCase } from "../application/update-project.usecase.ts";
+import type { GetProjectsUseCase } from "../application/get-projects.usecase";
+import type { CreateProjectUseCase } from "../application/create-project.usecase";
+import type { UpdateProjectUseCase } from "../application/update-project.usecase";
 
 export class ProjectController {
   constructor(

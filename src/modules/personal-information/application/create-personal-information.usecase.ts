@@ -1,6 +1,6 @@
-import type { PersonalInformationRepository } from "../infrastructure/personal-information.repository.ts";
-import type { IPersonalInformation } from "../domain/personal-information.entity.ts";
-import { ConflictError } from "../../../shared/errors/index.ts";
+import type { PersonalInformationRepository } from "../infrastructure/personal-information.repository";
+import type { IPersonalInformation } from "../domain/personal-information.entity";
+import { ConflictError } from "../../../shared/errors/index";
 
 export class CreatePersonalInformationUseCase {
   constructor(private readonly repo: PersonalInformationRepository) {}

@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { PersonalInformationRepository } from "../infrastructure/personal-information.repository.ts";
-import { GetPersonalInformationUseCase } from "../application/get-personal-information.usecase.ts";
-import { CreatePersonalInformationUseCase } from "../application/create-personal-information.usecase.ts";
-import { UpdatePersonalInformationUseCase } from "../application/update-personal-information.usecase.ts";
-import { PersonalInformationController } from "../presentation/personal-information.controller.ts";
-import { validate, asyncHandler } from "../../../shared/middleware/index.ts";
+import { PersonalInformationRepository } from "../infrastructure/personal-information.repository";
+import { GetPersonalInformationUseCase } from "../application/get-personal-information.usecase";
+import { CreatePersonalInformationUseCase } from "../application/create-personal-information.usecase";
+import { UpdatePersonalInformationUseCase } from "../application/update-personal-information.usecase";
+import { PersonalInformationController } from "../presentation/personal-information.controller";
+import { validate, asyncHandler } from "../../../shared/middleware/index";
 import {
   CreatePersonalInformationSchema,
   UpdatePersonalInformationSchema,
-} from "./personal-information.dto.ts";
+} from "./personal-information.dto";
 
 const personalInformationRepo = new PersonalInformationRepository();
 const getPersonalInformationUseCase = new GetPersonalInformationUseCase(

@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import type { GetIntroductionUseCase } from "../application/get-introduction.usecase.ts";
-import type { CreateIntroductionUseCase } from "../application/create-introduction.usecase.ts";
-import type { UpdateIntroductionUseCase } from "../application/update-introduction.usecase.ts";
+import type { GetIntroductionUseCase } from "../application/get-introduction.usecase";
+import type { CreateIntroductionUseCase } from "../application/create-introduction.usecase";
+import type { UpdateIntroductionUseCase } from "../application/update-introduction.usecase";
 
 export class IntroductionController {
   constructor(

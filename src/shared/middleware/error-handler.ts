@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
-import { AppError } from "../errors/index.ts";
-import { env } from "../../config/env.ts";
+import { AppError } from "../errors/index";
+import { env } from "../../config/env";
 
 export const errorHandler = (
   err: Error,

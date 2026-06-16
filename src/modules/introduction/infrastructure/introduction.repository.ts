@@ -1,6 +1,6 @@
-import type { IIntroduction } from "../domain/introduction.entity.ts";
-import { IntroductionModel } from "./introduction.model.ts";
-import { NotFoundError } from "../../../shared/errors/index.ts";
+import type { IIntroduction } from "../domain/introduction.entity";
+import { IntroductionModel } from "./introduction.model";
+import { NotFoundError } from "../../../shared/errors/index";
 
 export class IntroductionRepository {
   constructor(private readonly model = IntroductionModel) {}

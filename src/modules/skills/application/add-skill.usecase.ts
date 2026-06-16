@@ -1,5 +1,5 @@
-import type { SkillsRepository } from "../infrastructure/skills.repository.ts";
-import type { ISkill } from "../domain/skill.entity.ts";
+import type { SkillsRepository } from "../infrastructure/skills.repository";
+import type { ISkill } from "../domain/skill.entity";
 
 export class AddSkillUseCase {
   constructor(private readonly repo: SkillsRepository) {}

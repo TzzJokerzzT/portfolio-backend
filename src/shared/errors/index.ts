@@ -1,5 +1,5 @@
-export { AppError } from "./app-error.ts";
-export { NotFoundError } from "./not-found-error.ts";
-export { ValidationError } from "./validation-error.ts";
-export { ConflictError } from "./conflict-error.ts";
-export { InternalError } from "./internal-error.ts";
+export { AppError } from "./app-error";
+export { NotFoundError } from "./not-found-error";
+export { ValidationError } from "./validation-error";
+export { ConflictError } from "./conflict-error";
+export { InternalError } from "./internal-error";

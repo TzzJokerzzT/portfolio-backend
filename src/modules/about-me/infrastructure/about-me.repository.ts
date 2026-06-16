@@ -1,7 +1,7 @@
 import crypto from "crypto";
-import type { IAboutItem, IAboutMe } from "../domain/about-me.entity.ts";
-import { AboutMeModel } from "./about-me.model.ts";
-import { NotFoundError } from "../../../shared/errors/index.ts";
+import type { IAboutItem, IAboutMe } from "../domain/about-me.entity";
+import { AboutMeModel } from "./about-me.model";
+import { NotFoundError } from "../../../shared/errors/index";
 
 export class AboutMeRepository {
   constructor(private readonly model = AboutMeModel) {}

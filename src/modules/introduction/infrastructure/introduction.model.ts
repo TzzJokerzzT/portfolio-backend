@@ -1,5 +1,5 @@
 import mongoose, { type Model } from "mongoose";
-import type { IIntroduction } from "../domain/introduction.entity.ts";
+import type { IIntroduction } from "../domain/introduction.entity";
 
 const introductionSchema = new mongoose.Schema<
   IIntroduction,

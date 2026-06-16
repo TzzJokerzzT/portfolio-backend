@@ -1,15 +1,15 @@
 import { Router } from "express";
-import { ProjectRepository } from "../infrastructure/project.repository.ts";
-import { GetProjectsUseCase } from "../application/get-projects.usecase.ts";
-import { CreateProjectUseCase } from "../application/create-project.usecase.ts";
-import { UpdateProjectUseCase } from "../application/update-project.usecase.ts";
-import { ProjectController } from "../presentation/project.controller.ts";
-import { validate } from "../../../shared/middleware/index.ts";
-import { asyncHandler } from "../../../shared/middleware/index.ts";
+import { ProjectRepository } from "../infrastructure/project.repository";
+import { GetProjectsUseCase } from "../application/get-projects.usecase";
+import { CreateProjectUseCase } from "../application/create-project.usecase";
+import { UpdateProjectUseCase } from "../application/update-project.usecase";
+import { ProjectController } from "../presentation/project.controller";
+import { validate } from "../../../shared/middleware/index";
+import { asyncHandler } from "../../../shared/middleware/index";
 import {
   CreateProjectSchema,
   UpdateProjectSchema,
-} from "./create-project.dto.ts";
+} from "./create-project.dto";
 
 const projectRepo = new ProjectRepository();
 const getProjectsUseCase = new GetProjectsUseCase(projectRepo);

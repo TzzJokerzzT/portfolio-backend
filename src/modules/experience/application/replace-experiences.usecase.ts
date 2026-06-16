@@ -1,5 +1,5 @@
-import type { ExperienceRepository } from "../infrastructure/experience.repository.ts";
-import type { IExperience } from "../domain/experience.entity.ts";
+import type { ExperienceRepository } from "../infrastructure/experience.repository";
+import type { IExperience } from "../domain/experience.entity";
 
 export class ReplaceExperiencesUseCase {
   constructor(private readonly repo: ExperienceRepository) {}

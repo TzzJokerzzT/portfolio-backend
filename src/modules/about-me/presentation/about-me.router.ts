@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { AboutMeRepository } from "../infrastructure/about-me.repository.ts";
-import { GetAboutMeUseCase } from "../application/get-about-me.usecase.ts";
-import { CreateAboutMeUseCase } from "../application/create-about-me.usecase.ts";
-import { UpdateAboutMeUseCase } from "../application/update-about-me.usecase.ts";
-import { AboutMeController } from "../presentation/about-me.controller.ts";
-import { validate, asyncHandler } from "../../../shared/middleware/index.ts";
-import { CreateAboutMeSchema, UpdateAboutMeSchema } from "./about-me.dto.ts";
+import { AboutMeRepository } from "../infrastructure/about-me.repository";
+import { GetAboutMeUseCase } from "../application/get-about-me.usecase";
+import { CreateAboutMeUseCase } from "../application/create-about-me.usecase";
+import { UpdateAboutMeUseCase } from "../application/update-about-me.usecase";
+import { AboutMeController } from "../presentation/about-me.controller";
+import { validate, asyncHandler } from "../../../shared/middleware/index";
+import { CreateAboutMeSchema, UpdateAboutMeSchema } from "./about-me.dto";
 
 const aboutMeRepo = new AboutMeRepository();
 const getAboutMeUseCase = new GetAboutMeUseCase(aboutMeRepo);

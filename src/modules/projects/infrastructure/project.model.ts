@@ -1,5 +1,5 @@
 import mongoose, { type Document, type Model } from "mongoose";
-import type { IProject } from "../domain/project.entity.ts";
+import type { IProject } from "../domain/project.entity";
 
 const projectSchema = new mongoose.Schema<IProject, Model<IProject>>(
   {

@@ -1,4 +1,4 @@
-import { connectDB } from "./database.ts";
+import { connectDB } from "./database";
 
 let dbConnected = false;
 

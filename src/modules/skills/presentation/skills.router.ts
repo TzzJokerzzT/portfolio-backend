@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { SkillsRepository } from "../infrastructure/skills.repository.ts";
-import { GetSkillsUseCase } from "../application/get-skills.usecase.ts";
-import { AddSkillUseCase } from "../application/add-skill.usecase.ts";
-import { ReplaceSkillsUseCase } from "../application/replace-skills.usecase.ts";
-import { SkillsController } from "../presentation/skills.controller.ts";
-import { validate, asyncHandler } from "../../../shared/middleware/index.ts";
-import { AddSkillSchema, ReplaceSkillsSchema } from "./skill.dto.ts";
+import { SkillsRepository } from "../infrastructure/skills.repository";
+import { GetSkillsUseCase } from "../application/get-skills.usecase";
+import { AddSkillUseCase } from "../application/add-skill.usecase";
+import { ReplaceSkillsUseCase } from "../application/replace-skills.usecase";
+import { SkillsController } from "../presentation/skills.controller";
+import { validate, asyncHandler } from "../../../shared/middleware/index";
+import { AddSkillSchema, ReplaceSkillsSchema } from "./skill.dto";
 
 const skillsRepo = new SkillsRepository();
 const getSkillsUseCase = new GetSkillsUseCase(skillsRepo);

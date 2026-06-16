@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import type { GetExperiencesUseCase } from "../application/get-experiences.usecase.ts";
-import type { AddExperienceUseCase } from "../application/add-experience.usecase.ts";
-import type { ReplaceExperiencesUseCase } from "../application/replace-experiences.usecase.ts";
+import type { GetExperiencesUseCase } from "../application/get-experiences.usecase";
+import type { AddExperienceUseCase } from "../application/add-experience.usecase";
+import type { ReplaceExperiencesUseCase } from "../application/replace-experiences.usecase";
 
 export class ExperienceController {
   constructor(

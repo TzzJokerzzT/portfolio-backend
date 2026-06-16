@@ -1,8 +1,8 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import type { GetSkillsUseCase } from "../application/get-skills.usecase.ts";
-import type { AddSkillUseCase } from "../application/add-skill.usecase.ts";
-import type { ReplaceSkillsUseCase } from "../application/replace-skills.usecase.ts";
+import type { GetSkillsUseCase } from "../application/get-skills.usecase";
+import type { AddSkillUseCase } from "../application/add-skill.usecase";
+import type { ReplaceSkillsUseCase } from "../application/replace-skills.usecase";
 
 export class SkillsController {
   constructor(

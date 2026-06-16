@@ -1,7 +1,7 @@
-import { app } from "./src/app.ts";
-import { connectDB } from "./src/config/database.ts";
-import { ensureDB } from "./src/config/db-lazy.ts";
-import { env } from "./src/config/env.ts";
+import { app } from "./src/app";
+import { connectDB } from "./src/config/database";
+import { ensureDB } from "./src/config/db-lazy";
+import { env } from "./src/config/env";
 
 // Export the app for Vercel serverless
 export default app;
