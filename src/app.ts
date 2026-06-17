@@ -77,8 +77,6 @@ app.use("/api/experience", experienceRouter);
 
 app.use(errorHandler);
 
-export default app;
-
 // Local development only — Vercel sets NODE_ENV=production
 if (env.NODE_ENV === "development") {
 	const start = async () => {
@@ -89,3 +87,5 @@ if (env.NODE_ENV === "development") {
 	};
 	start();
 }
+
+export default app;
