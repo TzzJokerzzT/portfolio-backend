@@ -22,6 +22,7 @@ app.use(
 		origin: (origin, callback) => {
 			// Allow non-browser requests (curl, server-to-server, etc.)
 			if (!origin) return callback(null, true);
+			console.log("CORS check for origin:", origin);
 
 			const allowed = env.CORS_ORIGIN.split(",").map((s) => s.trim());
 
