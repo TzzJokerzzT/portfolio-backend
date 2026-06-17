@@ -19,33 +19,40 @@ const app = express();
 app.use(helmet());
 app.use(
 	cors({
-		origin: (origin, callback) => {
-			// Allow non-browser requests (curl, server-to-server, etc.)
-			if (!origin) return callback(null, true);
-
-			const allowed = env.CORS_ORIGIN.split(",").map((s) => s.trim());
-
-			// Universal wildcard: allow all origins
-			if (allowed.includes("*")) return callback(null, true);
-
-			// Exact match
-			if (allowed.includes(origin)) return callback(null, true);
-
-			// Wildcard patterns like *.vercel.app
-			const wildcardMatch = allowed.some((pattern) => {
-				if (pattern.startsWith("*.")) {
-					const domain = pattern.slice(1); // .vercel.app
-					return origin.endsWith(domain);
-				}
-				return false;
-			});
-
-			if (wildcardMatch) return callback(null, true);
-
-			callback(new Error("Not allowed by CORS"));
-		},
+		origin: env.CORS_ORIGIN.split(",").map((s) => s.trim()),
+		methods: ["GET", "POST", "PUT", "PATCH"],
+		allowedHeaders: ["Content-Type"],
 	}),
 );
+// app.use(
+// 	cors({
+// 		origin: (origin, callback) => {
+// 			// Allow non-browser requests (curl, server-to-server, etc.)
+// 			if (!origin) return callback(null, true);
+//
+// 			const allowed = env.CORS_ORIGIN.split(",").map((s) => s.trim());
+//
+// 			// Universal wildcard: allow all origins
+// 			if (allowed.includes("*")) return callback(null, true);
+//
+// 			// Exact match
+// 			if (allowed.includes(origin)) return callback(null, true);
+//
+// 			// Wildcard patterns like *.vercel.app
+// 			const wildcardMatch = allowed.some((pattern) => {
+// 				if (pattern.startsWith("*.")) {
+// 					const domain = pattern.slice(1); // .vercel.app
+// 					return origin.endsWith(domain);
+// 				}
+// 				return false;
+// 			});
+//
+// 			if (wildcardMatch) return callback(null, true);
+//
+// 			callback(new Error("Not allowed by CORS"));
+// 		},
+// 	}),
+// );
 app.use(morgan("dev"));
 app.use(express.json());
 
