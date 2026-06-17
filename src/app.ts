@@ -19,40 +19,35 @@ const app = express();
 app.use(helmet());
 app.use(
 	cors({
-		origin: (env.CORS_ORIGIN || "*").split(",").map((s) => s.trim()),
-		methods: ["GET", "POST", "PUT", "PATCH"],
-		allowedHeaders: ["Content-Type"],
+		origin: (origin, callback) => {
+			// Allow non-browser requests (curl, server-to-server, etc.)
+			if (!origin) return callback(null, true);
+
+			const allowed = env.CORS_ORIGIN.split(",").map((s) => s.trim());
+
+			// Universal wildcard: allow all origins
+			if (allowed.includes("*")) return callback(null, true);
+
+			// Exact match
+			if (allowed.includes(origin)) return callback(null, true);
+
+			// Wildcard patterns like *.vercel.app
+			const wildcardMatch = allowed.some((pattern) => {
+				if (pattern.startsWith("*.")) {
+					const domain = pattern.slice(1);
+					return origin.endsWith(domain);
+				}
+				return false;
+			});
+
+			if (wildcardMatch) return callback(null, true);
+
+			callback(new Error("Not allowed by CORS"));
+		},
+		methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+		allowedHeaders: ["Content-Type", "Authorization"],
 	}),
 );
-// app.use(
-// 	cors({
-// 		origin: (origin, callback) => {
-// 			// Allow non-browser requests (curl, server-to-server, etc.)
-// 			if (!origin) return callback(null, true);
-//
-// 			const allowed = env.CORS_ORIGIN.split(",").map((s) => s.trim());
-//
-// 			// Universal wildcard: allow all origins
-// 			if (allowed.includes("*")) return callback(null, true);
-//
-// 			// Exact match
-// 			if (allowed.includes(origin)) return callback(null, true);
-//
-// 			// Wildcard patterns like *.vercel.app
-// 			const wildcardMatch = allowed.some((pattern) => {
-// 				if (pattern.startsWith("*.")) {
-// 					const domain = pattern.slice(1); // .vercel.app
-// 					return origin.endsWith(domain);
-// 				}
-// 				return false;
-// 			});
-//
-// 			if (wildcardMatch) return callback(null, true);
-//
-// 			callback(new Error("Not allowed by CORS"));
-// 		},
-// 	}),
-// );
 app.use(morgan("dev"));
 app.use(express.json());
 
@@ -81,12 +76,15 @@ app.use("/api/experience", experienceRouter);
 
 app.use(errorHandler);
 
-const start = async () => {
-	await connectDB();
-	app.listen(env.PORT, () => {
-		console.log(`🚀 Server running on http://localhost:${env.PORT}`);
-	});
-};
-start();
-
 export default app;
+
+// Local development only — Vercel sets NODE_ENV=production
+if (env.NODE_ENV === "development") {
+	const start = async () => {
+		await connectDB();
+		app.listen(env.PORT, () => {
+			console.log(`🚀 Server running on http://localhost:${env.PORT}`);
+		});
+	};
+	start();
+}
